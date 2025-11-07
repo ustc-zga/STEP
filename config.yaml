@@ -1,0 +1,44 @@
+ssh:
+  num_nodes: 308
+  group_nodes: 30
+  batch_size: 16
+  in_dim: 1
+  in_dim_cluster: 2
+  total_epoch: 100
+  nhid: 64
+  num_layer: 2
+  dropout: 0
+  model: HGCN_1
+  # save:  HGCN4_ext/garage_cast/Xian
+  check_save: HiCo-STEP_v1/garage/xian
+  save: HiCo-STEP_v1/garage/
+  force: Fasle
+  data: HiCo-STEP_v1/data/XiAn_City
+  seq_length: 12
+  input_step: 36
+
+
+
+
+  expid: 1
+  show_graph_every: 20
+  early_stop_patience: 30
+  data_pred:
+    
+    disable_graph: 0
+    lr_data_start: 1e-3
+    lr_data_end: 1e-4
+    weight_decay: 0
+   
+   
+
+  graph_discov:
+    lambda_s_start: 0.5
+    lambda_s_end: 0.5
+    lr_graph_start: 0.01
+    lr_graph_end: 0.001
+    start_tau: 1
+    end_tau: 0.1
+    
+  causal_thres: value_0.5 # percentile_40
+
